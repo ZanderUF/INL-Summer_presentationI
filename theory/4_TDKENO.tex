@@ -1,0 +1,28 @@
+\section{TDKENO}
+
+\begin{frame}{Time-Dependent KENO (TDKENO)}
+
+\begin{itemize}
+
+    \item Solves time-dependent transport equation in 3-D with the Improved Quasi Static Method
+    \item Neutron flux is factored into two components:
+    \begin{itemize}
+        \item \textbf{Amplitude function} {\large $T(t)$ }
+        \item \textbf{Shape function} {\large $\Phi(r,E,\Omega,t)$ } 
+    \end{itemize}
+  %  \item $ \Psi(r,E,\Omega,t) =T(t) * \Phi(r,E,\Omega,t)$
+\end{itemize}
+
+\vspace{5mm}
+
+\begin{block}{Flux Factorization}
+\centering
+$ \Psi(r,E,\Omega,t) =T(t) * \Phi(r,E,\Omega,t)$ $\rightarrow$ Transport Equation \\
+\textbf{Result: coupled equations solved on different time scales}
+\end{block}
+
+%\begin{itemize}
+%    \item Result: Computationally intensive flux shape calculated less frequently.
+%\end{itemize}
+
+\end{frame}

@@ -1,0 +1,125 @@
+\documentclass{beamer}[10]
+
+%---Clock---%
+%\usepackage[timeinterval=1,font=Helv]{tdclock}
+%\setbeamertemplate{background}{\hspace{.5em}\textcolor{red}{\tiny\bfseries\tdtime}}
+
+\usepackage{pgf}
+\usepackage[utf8]{inputenc}
+\usepackage{beamerthemesplit}
+\usepackage{graphics,epsfig, subfigure}
+\usepackage{url}
+\usepackage{srcltx}
+\usepackage{hyperref}
+\usepackage{graphicx}
+%--------------------------
+\usepackage{booktabs}
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes}
+\usepackage{times}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{verbatim}
+\usepackage{movie15}
+
+%--------------------------
+\usepackage{smartdiagram}
+
+\definecolor{kugreen}{HTML}{003399}
+\definecolor{kugreenlys}{RGB}{132,158,139}
+\definecolor{kugreenlyslys}{RGB}{173,190,177}
+\definecolor{kugreenlyslyslys}{RGB}{214,223,216}
+\setbeamercovered{transparent}
+\mode<presentation>
+
+\usetheme[width=1.5cm,numbers,totalnumber,compress]{PaloAlto}
+%\usetheme[width=.5cm]{PaloAlto}
+
+\setbeamertemplate{footline}[frame number]
+\setbeamercolor{logo}{bg=white} 
+
+ \usecolortheme[named=kugreen]{structure}
+ \useinnertheme{circles}
+ \usefonttheme[onlymath]{serif}
+ \setbeamercovered{transparent}
+ \setbeamertemplate{blocks}[rounded][shadow=true]
+
+%------------------------REMOVE AUTHOR AND TITLE FROM SIDEBAR------------------------
+  \makeatletter
+  \setbeamertemplate{sidebar \beamer@sidebarside}%{sidebar theme}
+  {
+    \beamer@tempdim=\beamer@sidebarwidth%
+    \advance\beamer@tempdim by -6pt%
+    \insertverticalnavigation{\beamer@sidebarwidth}%
+    \vfill
+    \ifx\beamer@sidebarside\beamer@lefttext%
+    \else%
+      \usebeamercolor{normal text}%
+      \llap{\usebeamertemplate***{navigation symbols}\hskip0.1cm}%
+      \vskip2pt%
+    \fi%
+  }%
+\makeatother
+%-----------------------------------------------------------------------------------
+
+
+%-------------------TITLE SLIDE----------------------%
+\logo{\includegraphics[width=1cm]{logo-INL-small.png}}
+%\useoutertheme{infolines} 
+\title{Assessment of TDKENO/MOOSE Coupling for Simulating Transients with Thermal Feedback}
+\author{Zander Mausolff* , Leslie Kerby**, Mark DeHart**, Sedat Goluoglu*}
+\institute{ University of Florida, Department of Material Sciences* \\
+Idaho National Laboratory**
+
+%----------------------------------------%
+\begin{figure}
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+    \includegraphics[width=4cm]{figures/UF.jpg}
+  \label{fig:logo}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+    \includegraphics[width=4cm]{inl-log.png}
+  \label{fig:logo}
+\end{minipage}
+\end{figure}
+%----------------------------------------%
+
+\footnotesize August 2nd, 2016 \hspace{5mm} zanderm@ufl.edu*\\}
+
+%----------------------------------------%
+
+\begin{document}
+\frame{\titlepage \vspace{-0.5cm}
+
+% For every picture that defines or uses external nodes, you'll have to
+% apply the 'remember picture' style. To avoid some typing, we'll apply
+% the style to all pictures.
+\tikzstyle{every picture}+=[remember picture]
+
+% By default all math in TikZ nodes are set in inline mode. Change this to
+% displaystyle so that we don't get small fractions.
+\everymath{\displaystyle}
+
+}
+
+%----------------------------------------%
+%----------------------------------------%
+\input{overview}
+
+%%----------------------------------------%
+%%-------------EXTRA SLIDES---------------%
+%\input{amplitude}
+%%----------------------------------------%
+%\input{reactivity}
+%----------------------------------------%
+\input{theory/amplitude}
+\input{theory/flux_shape}
+
+%\input{flux_movie}
+
+\end{document}
